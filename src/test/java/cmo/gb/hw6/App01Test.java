@@ -5,6 +5,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class App01Test {
+    //пробовал сделать 2й метод параметризированным через @ParameterizedTest
+    //   и @MethodSource, однако не удается в качестве параметров передать новый массив new int[]{...}.
     private App01 app01;
     @BeforeEach
     public void init(){
