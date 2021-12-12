@@ -5,6 +5,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class App01 {
+
+    //преобразование массива
     public int[] massTransform(int[] sourceMass){
         List<Integer> sourceList = Arrays.stream(sourceMass).boxed().collect(Collectors.toList());
         if(!sourceList.contains(4)){
@@ -23,6 +25,7 @@ public class App01 {
         return res;
     }
 
+    //проверка массива
     public boolean massCheck(int[] sourceMass){
         List<Integer> sourceList = Arrays.stream(sourceMass).boxed().collect(Collectors.toList());
         if(sourceList.contains(4)&& sourceList.contains(1)){

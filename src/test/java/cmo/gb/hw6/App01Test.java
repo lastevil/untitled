@@ -3,13 +3,10 @@ package cmo.gb.hw6;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.Arguments;
-import org.junit.jupiter.params.provider.MethodSource;
-
-import java.util.stream.Stream;
 
 class App01Test {
+    //пробовал сделать 2й метод параметризированным через @ParameterizedTest
+    //   и @MethodSource, однако не удается в качестве параметров передать новый массив new int[]{...}.
     private App01 app01;
     @BeforeEach
     public void init(){
@@ -17,7 +14,7 @@ class App01Test {
     }
 
     @Test
-    public void massTransformTest(){
+    public void massTransformTest1(){
         Assertions.assertArrayEquals(new int[]{},app01.massTransform(new int[]{1, 2, 3, 4}));
     }
     @Test
@@ -31,6 +28,12 @@ class App01Test {
     public void massTransformTest2(){
         Assertions.assertArrayEquals(new int[]{3,1,6},
                 app01.massTransform(new int[]{1, 2, 3, 4, 1, 2, 5, 7, 4, 3, 1, 6})
+        );
+    }
+    @Test
+    public void massTransformTest3(){
+        Assertions.assertArrayEquals(new int[]{1, 2, 5, 7, 8, 3, 1, 6},
+                app01.massTransform(new int[]{1, 2, 3, 4, 1, 2, 5, 7, 8, 3, 1, 6})
         );
     }
 
